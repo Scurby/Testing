@@ -3,8 +3,8 @@
 ****************************************************************************************************************
 Special Thanks to lordkator for the initial FastTrack VM Image and the scripts that this repository is based on. 
 ****************************************************************************************************************
-
-VirtualBox, VMWare, or native install.
+This repository will assist developers with the setup of the SWGEmu development environment.  I have tested it on various harwarde configurations. Minimum requirements are 3g memory, 16g hard drive, single core processor and an internet connection. Recommended specs are below. 
+VirtualBox, VMWare, or native install
 
 	8g mem
 	32g virtual drive
