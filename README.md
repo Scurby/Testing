@@ -23,27 +23,22 @@ VirtualBox, VMWare, or native install.
 * password = 123456
 * root pw = 12345678
 
-### Predefined software selections - Default selection
+### Predefined software selections
 
 	(*)Debian Desktop
 	    (*) Gnome
 	(*)Print Server
 	(*)Standard System Utilities
 	
-### Config sudoer as needed 
+#### Config sudoer as needed 
 
 https://www.digitalocean.com/community/tutorials/how-to-add-delete-and-grant-sudo-privileges-to-users-on-a-debian-vps
-
-### Run Updates
-
-	sudo apt-get update
 
 # Import scripts
 
 Copy this series of commands into a sudo terminal: Installs git, downloads scripts and installs them.
 
-	sudo apt-get install -y -q git && git clone https://github.com/Scurby/Testing.git && cp -i /home/swgemu/Testing/README.md /home/swgemu/Documents && mkdir bin && cp -i /home/swgemu/Testing/bin/* /home/swgemu/bin/ && mkdir setup && cp -i /home/swgemu/Testing/setup/* /home/swgemu/setup/ && mkdir run && cp -r /home/swgemu/Testing/run/* /home/swgemu/run/ && chmod -v +x /home/swgemu/bin/* && PATH=$PATH:$HOME/bin
-
+	sudo apt-get update && sudo apt-get install -y -q git && git clone https://github.com/Scurby/Testing.git && cp -i /home/swgemu/Testing/README.md /home/swgemu/Documents && mkdir bin && cp -i /home/swgemu/Testing/bin/* /home/swgemu/bin/ && mkdir setup && cp -i /home/swgemu/Testing/setup/* /home/swgemu/setup/ && mkdir run && cp -r /home/swgemu/Testing/run/* /home/swgemu/run/ && chmod -v +x /home/swgemu/bin/* && PATH=$PATH:$HOME/bin
 
 ## Run setup scripts
 
@@ -80,7 +75,7 @@ Also, run_dev uses gdb in batch mode and starts with the commands  in ~/run/run_
 	(May require indexing exlusions)
 
 7. latest - do a quick git-stash, git-pull, and git-stash-apply so you can get to the latest code w/o loosing local work.
-**************************************************************************************
+
 ### The following scripts are also useful...
 * ack - Nice source grep tool (try: cd ~/workspace/MMOCoreORB/src; ack PlanetManager).
 * freeze - Save your devenv state so you can repeat the same tests over and over.
@@ -98,18 +93,13 @@ Also, run_dev uses gdb in batch mode and starts with the commands  in ~/run/run_
 * ~~updateip - Get ip address of local eth0 and update galaxy table as needed.~~
 
 **************************************************************************************
-
 Useful Stuff
-
-	git log --pretty=format:'%h was %an, %ar, message: %s' -10
-
-	PATH=$PATH:$HOME/bin
+* git log --pretty=format:'%h was %an, %ar, message: %s' -10
+* PATH=$PATH:$HOME/bin
 
 **************************************************************************************
-#FIXME's
-
-openfile {filename} - open file in eclipse
-
-godmode - sets acct with ID=1 to Admin (15). Run after first acct is created.
+#### FIXME's
+* openfile {filename} - open file in eclipse
+* godmode - sets acct with ID=1 to Admin (15). Run after first acct is created.
 
 **************************************************************************************
