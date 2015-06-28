@@ -11,7 +11,7 @@ VirtualBox, VMWare, or native install.
 	max cores
 	bridged network
 
-# Install Debian Desktop OS 
+# Install Debian 64bit Desktop OS 
 (or variant)
 * Debian - https://www.debian.org/
 * pointLinux - http://pointlinux.org/
