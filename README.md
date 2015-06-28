@@ -45,9 +45,7 @@ Copy this series of commands into a sudo terminal: Installs git, downloads scrip
 The following scripts are run from the command line. They are numbered in the order I use them. 
 
 1. options - Installs Optional packages including xclip, vim, quassel, and others. Asks to run 'first' script.
-
 2. first - Installs required packages and programs including Lua, BerkelyDB, and others. Asks to run 'start' script.
-
 3. start - Setup of development environment follows these steps:
    * Choose editor
    * Setup git user.* config
@@ -61,19 +59,17 @@ The following scripts are run from the command line. They are numbered in the or
    * Server configuration
    * Tre files
    * Asks if you want to build and run the server. 
-
 4. build - simple build script
    * 3 options- build, build config, build clean
-
-5. run_dev - Builds and run the development server and launch it under gdb on a 'screen'.  
-Using this command to start the server will also output a screenlog to ~/run/ and use the config.lua in ~/run/conf/ to relace the config.lusa in the core.  
-Also, run_dev uses gdb in batch mode and starts with the commands  in ~/run/run_gdb which you can change to your pleasing;
-	(breakpoints, dumps, settings etc.)
-
-6. eclipse - install eclipse luna, import project and set git properties.
-	(Requires Egit-properties.tar.gz in /home/setup/ )
-	(May require indexing exlusions)
-
+5. run_dev - Builds and runs the development server.
+   * Using this command to start the server will: 
+   * launches the server under gdb on a 'screen'.
+   * outputs a screenlog to ~/run/screenlog*
+   * use the config.lua in ~/run/conf/ to relace the config.lua in ~/MMOCoreORB/bin/conf.  
+   * uses gdb in batch mode and starts with the commands  in ~/run/run_gdb which you can change to your pleasing; (breakpoints, dumps, settings etc.)
+6. eclipse - Installs eclipse luna, imports project and sets git team properties.
+   * (Requires Egit-properties.tar.gz in /home/setup/ )
+   * (Requires indexing exlusions)
 7. latest - do a quick git-stash, git-pull, and git-stash-apply so you can get to the latest code w/o loosing local work.
 
 ### The following scripts are also useful...
@@ -86,14 +82,15 @@ Also, run_dev uses gdb in batch mode and starts with the commands  in ~/run/run_
 * createdb - mysql table, user, and pwd tool.
   * Ref: (http://jetpackweb.com/blog/2009/07/20/bash-script-to-create-mysql-database-and-user/)
 * myip -  display the ip of the VM and login port for quick configuration of the windows client.
+* updateip - Get ip address of local eth0 and update galaxy table as needed.
 * installed - Package and version check saved to /home/<file>.txt.
 * ~~prime - Provides info to set sudo permissions.~~
 * ~~bang - dl's and installs these scripts~~
 * ~~idlc - idlc install tool~~
-* ~~updateip - Get ip address of local eth0 and update galaxy table as needed.~~
+
 
 **************************************************************************************
-Useful Stuff
+#### Useful Stuff
 * git log --pretty=format:'%h was %an, %ar, message: %s' -10
 * PATH=$PATH:$HOME/bin
 
