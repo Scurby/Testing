@@ -575,6 +575,54 @@ else
 fi
 
 ##############################################################################
+# Setup eclipse
+# TODO Edit eclipse_base= to desired eclipse tarball
+#####################
+#  Base install option -eclipse 3.8
+# sudo apt-get install eclipse eclipse-cdt eclipse-egit
+##############################################################################
+logstep "Setup Eclipse"
+
+dir=~/setup/
+eclipse_base=~/setup/eclipse-cpp-luna-SR2-linux-gtk-x86_64.tar.gz
+
+if [ ! -f $eclipse_base ]; then
+  cd $dir
+  wget http://developer.eclipsesource.com/technology/epp/luna/eclipse-cpp-luna-SR2-linux-gtk-x86_64.tar.gz
+fi
+
+if [ -d ~/eclipse ]; then
+  logmsg "Looks like eclipse is already installed"
+else
+  logmsg "Restoring basic eclipse install from $eclipse_base"
+  cd ~
+  ~/bin/bar $eclipse_base | tar xfz -
+  logmsg "Import eclipse project settings (might take a few minutes)"
+  for i in Core3/MMOCoreORB PublicEngine/MMOEngine Tools
+  do
+    if [ -f ~/workspace/$i/.project ]; then
+      logmsg "Importing $i"
+      ~/eclipse/eclipse \
+      -nosplash \
+      -data ~/workspace \
+      -application org.eclipse.cdt.managedbuilder.core.headlessbuild \
+      -import ~/workspace/$i
+    else
+      logmsg "Missing project file for $i?"
+    fi
+  done
+
+  for dir in ~/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/*
+  do
+    logmsg "Setup Egit properties for "$(basename $dir)
+    cd $dir
+    tar xzf ~/setup/Egit-properties.tar.gz
+  done
+  logmsg "Eclipse setup and import complete"
+  logmsg "Add Resource filter. Exclude all files and folders named 'utils' "
+fi
+
+##############################################################################
 # Check for *.tre files
 ##############################################################################
 logstep "TRE files"
