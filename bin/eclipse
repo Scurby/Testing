@@ -51,7 +51,7 @@ tc_rmso=$(tput rmso)
 logstep "Setup Eclipse"
 
 dir=~/setup/
-eclipse_base=~/setup/eclipse-cpp-luna-SR2-linux-gtk-x86_64.tar.gz
+eclipse_base=~/setup/eclipse-cpp-mars-2-linux-gtk-x86_64.tar.gz
 
 if [ ! -f $eclipse_base ]; then
   cd $dir
