@@ -55,7 +55,7 @@ eclipse_base=~/setup/eclipse-cpp-mars-2-linux-gtk-x86_64.tar.gz
 
 if [ ! -f $eclipse_base ]; then
   cd $dir
-  wget http://developer.eclipsesource.com/technology/epp/luna/eclipse-cpp-luna-SR2-linux-gtk-x86_64.tar.gz
+  wget http://developer.eclipsesource.com/technology/epp/mars/eclipse-cpp-mars-2-linux-gtk-x86_64.tar.gz
 fi
 
 if [ -d ~/eclipse ]; then
@@ -86,5 +86,4 @@ else
     tar xzf ~/setup/Egit-properties.tar.gz
   done
   logmsg "Eclipse setup and import complete"
-  logmsg "Add Resource filter. Exclude all files and folders named 'utils' "
 fi
