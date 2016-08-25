@@ -72,7 +72,7 @@ cd
         echo 2>&1 | tee -a version.txt
       done
 
-    for i in db5.1 libreadline-gplv2-dev libncurses5-dev libneon27 libaprutil1-dev  libgtest-dev openjdk-6-jre openjdk-6-jre-headless
+    for i in db5.3 libreadline-gplv2-dev libncurses5-dev libneon27 libaprutil1-dev  libgtest-dev openjdk-7-jre openjdk-7-jre-headless
       do
         logmsg " ${i} "
         echo 2>&1 | tee -a pkglist.txt
