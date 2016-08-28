@@ -60,7 +60,7 @@ fi
 # Lua install
 # INFO -wget http://www.lua.org/ftp/lua-5.3.3.tar.gz ## saved to home/setup/
 #################
-logstep "Lua 5.1.4 Install"
+logstep "Lua 5.3.3 Install"
 
 dir=~/setup/
 lua_base=~/setup/lua-5.3.3.tar.gz
@@ -95,13 +95,12 @@ if [ -f $lua_ins ]; then
       cd
     done
   logmsg " "
-  logmsg "You have successfully installed Lua if you see 'Hello world, from Lua 5.3!' in the terminal."
+  logmsg "You have successfully installed Lua if you see 'Lua 5.3!' in the terminal."
   logmsg " "
 fi
 
 ####################
 # Berkely DB Install
-# wget http://download.oracle.com/berkeley-db/db-5.0.32.NC.tar.gz ## saved to home/setup/
 ####################
 # TODO -Remove un-needed files
 # rm -R db-5.0.32.NC  NEEDED OR NOT?
