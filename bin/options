@@ -49,7 +49,7 @@ logmsg	    " Add or remove as needed in '/home/bin/options' "
 logmsg
 
 if yorn "Would you like to install the recommended packages via sudo apt-get commands now??"; then
-  for i in vim xclip terminator quassel git git-cola git-review gedit gedit-plugins
+  for i in vim xclip wget terminator quassel git-cola git-review gedit gedit-plugins
     do
       logmsg " Installing ${i} ... "
       sudo apt-get -q -y install ${i} &>> ~/Documents/pkglog.txt
@@ -67,12 +67,10 @@ fi
 
 
 ######################
-# Remove un-needed files
+# Finalize
 ######################
-logstep "Finalizing install and removing un-needed files."
+logstep "Finalizing install."
   sudo apt-get -q -y update
-#  sudo apt-get -q -y upgrade &>> ~/Documents/pkglog.txt
-#  sudo apt-get -q -y autoremove &>> ~/Documents/pkglog.txt
   logmsg 
   logmsg "Thanks for the fish...  "
   logmsg 
