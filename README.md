@@ -42,11 +42,13 @@ Copy this series of commands into a sudo terminal: Installs git, downloads scrip
 
 ## Run setup scripts
 
-The following scripts are run from the command line. They are numbered in the order I use them. 
+The following scripts are run from the command line. They are numbered in the order I use them.
+
+	NOTE: if using VirtualBox either use Dropbox to copy Tre files to the guest or configure Guest Additions before continuing. It will save you some time and frustration.
 
 1. options - Installs Optional packages including xclip, vim, quassel, and others. Asks to run 'first' script.
 2. first - Installs required packages and programs including Lua, BerkelyDB, and others. Asks to run 'start' script.
-3. start - Setup of development environment follows these steps:
+3. start - Setup of development environment - follows these steps:
    * Choose editor
    * Setup git user.* config
    * Setup ssh key
@@ -57,16 +59,16 @@ The following scripts are run from the command line. They are numbered in the or
    * Engine library
    * MySQL database checks
    * Server configuration
-   * Tre files
+   * Checks for Tre files (if you didn't copy them earlier, this will stop you)
    * Asks if you want to build and run the server. 
 4. build - simple build script
    * 3 options- build, build config, build clean
 5. run_dev - Builds and runs the development server.
    * Using this command to start the server will: 
-   * launches the server under gdb on a 'screen'.
-   * outputs a screenlog to ~/run/screenlog*
-   * use the config.lua in ~/run/conf/ to relace the config.lua in ~/MMOCoreORB/bin/conf.  
-   * uses gdb in batch mode and starts with the commands  in ~/run/run_gdb which you can change to your pleasing; (breakpoints, dumps, settings etc.)
+   * launch the server under gdb on a 'screen'.
+   * output a screenlog to ~/run/screenlog*
+   * use the config.lua in ~/run/conf/ to replace the config.lua in ~/MMOCoreORB/bin/conf.  
+   * use gdb in batch mode and start with the commands  in ~/run/run_gdb which you can change to your pleasing; (breakpoints, dumps, settings etc.)
 6. eclipse - Installs eclipse luna, imports project and sets git team properties.
    * (Requires Egit-properties.tar.gz in /home/setup/ )
    * (Requires indexing exlusions)
