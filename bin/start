@@ -67,7 +67,7 @@ if xset q > /dev/null 2>&1; then
 fi
 
 # TODO Add check for default browser
-# Edit browser as desired. Firefox commented out.
+# Edit browser as desired. 
 export BROWSER=chromium
 
 if [ -x /usr/bin/chromium ]; then
@@ -80,23 +80,6 @@ fi
 #  BROWSER=/usr/bin/firefox
 #fi
 
-############
-# Commented out 3/15/2015. -Scurby
-# If we have local X11 and this is firsttime try launching a gnome terminal with us in it..
-# TODO Add info.
-############
-# if [ "X$DISPLAY" = "X:0.0" -a -f ~/.firsttime ]; then
-#  if [ -n "$GETSTARTED_AUTO" ]; then
-#    MODE=$GETSTARTED_AUTO
-#    logmsg "GETSTARTED_AUTO=[$GETSTARTED_AUTO]"
-#  else
-#    export GETSTARTED_AUTO=$MODE
-#    logmsg "Launching gnome-terminal"
-#    nohup gnome-terminal --title 'getstarted' --maximize -e ~/bin/getstarted > ~/tmp/start.out 2>&1 &
-#    exit
-#  fi
-#fi
-############
 
 
 ##############################################################################
@@ -494,10 +477,6 @@ fi
 
 logmsg "Have fun!"
 
-# Clear firsttime flag
-if rm -f ~/.firsttime > /dev/null 2>&1; then
-  logger -t start "Removed firsttime flag"
-fi
 
 logger -t start "** COMPLETED IN $SECONDS SECOND(S) **"
 
@@ -507,8 +486,5 @@ if yorn "Would you like to build and run the server now?"; then
   exit 0
 fi
 
-if [ -n "$GETSTARTED_AUTO" ]; then
-    read -p "Press <ENTER> to close window: " junk
-fi
 
 exit 0

@@ -51,11 +51,11 @@ tc_rmso=$(tput rmso)
 logstep "Setup Eclipse"
 
 dir=~/setup/
-eclipse_base=~/setup/eclipse-cpp-luna-SR2-linux-gtk-x86_64.tar.gz
+eclipse_base=~/setup/eclipse-cpp-mars-SR2-linux-gtk-x86_64.tar.gz
 
 if [ ! -f $eclipse_base ]; then
   cd $dir
-  wget http://developer.eclipsesource.com/technology/epp/luna/eclipse-cpp-luna-SR2-linux-gtk-x86_64.tar.gz
+  wget http://developer.eclipsesource.com/technology/epp/mars/eclipse-cpp-luna-SR2-linux-gtk-x86_64.tar.gz
 fi
 
 if [ -d ~/eclipse ]; then

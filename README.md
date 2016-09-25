@@ -36,7 +36,7 @@ https://www.digitalocean.com/community/tutorials/how-to-add-delete-and-grant-sud
 
 # Import scripts
 
-Copy this series of commands into a sudo terminal: Installs git, downloads scripts and installs them.
+Copy this series of commands into a terminal: Installs git, downloads scripts and installs them.
 
 	sudo apt-get update && sudo apt-get install -y -q git && git clone https://github.com/Scurby/Testing.git && cp -i /home/swgemu/Testing/README.md /home/swgemu/Documents && mkdir bin && cp -i /home/swgemu/Testing/bin/* /home/swgemu/bin/ && mkdir setup && cp -i /home/swgemu/Testing/setup/* /home/swgemu/setup/ && mkdir run && cp -r /home/swgemu/Testing/run/* /home/swgemu/run/ && chmod -v +x /home/swgemu/bin/* && PATH=$PATH:$HOME/bin
 
@@ -65,7 +65,7 @@ The following scripts are run from the command line. They are numbered in the or
    * Using this command to start the server will: 
    * launches the server under gdb on a 'screen'.
    * outputs a screenlog to ~/run/screenlog*
-   * use the config.lua in ~/run/conf/ to relace the config.lua in ~/MMOCoreORB/bin/conf.  
+   * use the config.lua in ~/run/conf/ to relace the config.lua in ~/MMOCoreORB/bin/conf.
    * uses gdb in batch mode and starts with the commands  in ~/run/run_gdb which you can change to your pleasing; (breakpoints, dumps, settings etc.)
 6. eclipse - Installs eclipse luna, imports project and sets git team properties.
    * (Requires Egit-properties.tar.gz in /home/setup/ )

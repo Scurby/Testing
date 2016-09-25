@@ -43,7 +43,7 @@ tc_rmso=$(tput rmso)
 logstep "Recommended packages."
 logmsg  " The following packages or programs are recommended. "
 logmsg
-logmsg	" vim xclip terminator chromium quassel git-cola etc. "
+logmsg	" vim xclip terminator quassel git-cola etc. "
 logmsg	
 logmsg	    " Add or remove as needed in '/home/bin/options' "
 logmsg
@@ -62,7 +62,6 @@ logstep "Dropbox"
 if yorn "Would you like to install Dropbox??"; then
       cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
       ~/.dropbox-dist/dropboxd & disown
-# TODO - Add panel link
 fi
 
 
@@ -71,8 +70,6 @@ fi
 ######################
 logstep "Finalizing install and removing un-needed files."
   sudo apt-get -q -y update
-#  sudo apt-get -q -y upgrade &>> ~/Documents/pkglog.txt
-#  sudo apt-get -q -y autoremove &>> ~/Documents/pkglog.txt
   logmsg 
   logmsg "Thanks for the fish...  "
   logmsg 
