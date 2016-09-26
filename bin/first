@@ -60,7 +60,7 @@ fi
 # Lua install
 # INFO -wget http://www.lua.org/ftp/lua-5.3.3.tar.gz ## saved to home/setup/
 #################
-logstep "Lua 5.1.4 Install"
+logstep "Lua 5.3.3 Install"
 
 dir=~/setup/
 lua_base=~/setup/lua-5.3.3.tar.gz
