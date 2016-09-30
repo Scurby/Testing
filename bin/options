@@ -20,11 +20,6 @@ yorn() {
   return 0
 }
 
-logmsg() {
-  echo "${tc_smso}**${tc_rmso} $*"
-  logger -t options "$*"
-}
-
 logstep() {
   let "step=$step + 1"
   echo ${tc_smso}$(head -c $(tput cols) < /dev/zero | tr '\0' '*')${tc_rmso}
@@ -41,17 +36,17 @@ tc_rmso=$(tput rmso)
 # xclip terminator vim chromium quassel git-cola etc... 
 #################
 logstep "Recommended packages."
-logmsg  " The following packages or programs are recommended. "
-logmsg
-logmsg	" vim xclip terminator quassel git-cola etc. "
-logmsg	
-logmsg	    " Add or remove as needed in '/home/bin/options' "
-logmsg
+echo  " The following packages or programs are recommended. "
+echo
+echo  " vim xclip terminator quassel git-cola etc. "
+echo	
+echo  " Add or remove as needed in '/home/bin/options' "
+echo
 
 if yorn "Would you like to install the recommended packages via sudo apt-get commands now??"; then
   for i in vim xclip terminator quassel git git-cola git-review gedit gedit-plugins
     do
-      logmsg " Installing ${i} ... "
+      echo " Installing ${i} ... "
       sudo apt-get -q -y install ${i} &>> ~/Documents/pkglog.txt
     done
 fi
@@ -68,10 +63,9 @@ fi
 ######################
 # Remove un-needed files
 ######################
-logstep "Finalizing install and removing un-needed files."
-  sudo apt-get -q -y update
-  logmsg 
-  logmsg "Thanks for the fish...  "
-  logmsg 
+logstep "That was the easy part."
+  echo 
+  echo "Thanks for the fish...  "
+  echo 
 
 exit 0
