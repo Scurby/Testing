@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# options - Recommended programs and packages install for swgemu development environment
+# options - Optional programs and packages install for swgemu development environment
 #
 # Author: Scurby <scurby@swgemu.com>
 #
@@ -35,16 +35,14 @@ tc_rmso=$(tput rmso)
 # Recommended packages
 # xclip terminator vim chromium quassel git-cola etc... 
 #################
-logstep "Recommended packages."
-echo  " The following packages or programs are recommended. "
-echo
-echo  " vim xclip terminator quassel git-cola etc. "
-echo	
+logstep "Optional packages."
+echo  " The following packages or programs are optional. "
+echo  " vim xclip atom terminator quassel git-cola etc. "
 echo  " Add or remove as needed in '/home/bin/options' "
 echo
 
 if yorn "Would you like to install the recommended packages via sudo apt-get commands now??"; then
-  for i in vim xclip terminator quassel git git-cola git-review gedit gedit-plugins
+  for i in atom vim xclip terminator quassel git git-cola git-review gedit gedit-plugins
     do
       echo " Installing ${i} ... "
       sudo apt-get -q -y install ${i} &>> ~/Documents/pkglog.txt
@@ -64,8 +62,12 @@ fi
 # Remove un-needed files
 ######################
 logstep "That was the easy part."
-  echo 
+  echo "Run the 'first' script to install required packages."
   echo "Thanks for the fish...  "
-  echo 
+  echo ""
+  
+if yorn "Would you like to run 'first' now?'?"; then
+      ~/bin/first
+fi
 
 exit 0
